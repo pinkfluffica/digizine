@@ -1,0 +1,303 @@
+/*
+Theme Name: DigiZine
+Theme URI: http://wordpress.org/themes/digizine
+Author: ssica3003
+Author URI: http://www.jessicaburton.co.uk
+Description: Inspired by photocopied pamphlets from the 80s and beyond, DigiZine combines a typewriter aesthetic with the best of the digital world. It is responsive to all screen devices, uses various techniques to be easier on the eye and uses a layout that is particularly useful for mobile users.
+Version: 1.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags: white, blue, one-column, two-columns, right-sidebar, flexible-width, blog
+Text Domain: digizine
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+*/
+
+@font-face {
+	font-family: 'Mechanical';
+	font-weight: normal;
+	src: url('fonts/Mechanical.otf') format("opentype");
+}
+
+/*---------------*/
+/*Border-box*/
+/*----------------*/
+
+*, *:after, *:before {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+/*---------------*/
+/*Page-wide styles */
+/*---------------*/
+
+body {
+	background-image: url(ricepaper_v3.png);
+	background-image: url(notebook.png); 
+	font-family: 'Mechanical'; 
+	color: #021631;
+	margin: 0;
+	padding-top: 1px;
+}
+
+h2, h3, h4, h5, h6 {
+	margin-top: 0;
+	margin-bottom: 0.5rem;
+}
+
+a {
+	text-decoration: none;
+	color: #021631;
+}
+
+a:hover, a:focus {
+	text-decoration: underline;
+}
+
+
+/*-------
+grid
+-------*/
+
+.grid:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.column {
+    float: left;
+    overflow: hidden;
+    padding: 0 5px;
+}
+
+
+
+.two-thirds {
+	width: 66.66%
+}
+
+.one-third {
+	width: 33.33%
+}
+
+.fifty {
+    width: 50%;
+}
+
+@media screen and (max-width: 740px) {
+    .column {
+        width: 100%;
+        float: none;
+        display: block;
+        margin-top: 10px;
+    }
+    .two-thirds {
+    	width: 100%
+    }
+    .one-third {
+    	width: 100%
+    }
+}
+
+/*--------------*/
+/*Header*/
+/*---------------*/
+
+header {
+	text-align: center;
+	margin-bottom: 40px;
+}
+
+header h1 {
+	font-size: 55px;
+	margin: 27px 0 10px 0;
+}
+
+header p {
+	margin: 0;
+	font-size: 20px;
+}
+
+/*----------------*/
+/*Naviagation*/
+/*----------------*/
+
+.nav {
+	border-top: 1px solid #021631;
+	border-bottom: 1px solid #021631;
+	padding-top: 1rem;
+	padding-bottom: 1rem;
+	margin-bottom: 40px;
+	padding-left: 10px;
+	padding-right: 10px;
+	font-size: 24px;
+}
+
+/*nav div {
+	float: left;
+	font-size: 28px;
+}*/
+
+nav h2 {
+	display: inline-block;
+	font-size: 26px;
+}
+ul {
+	display: inline-block;
+	margin-top: 0;
+	margin-bottom: 0;
+	padding: 0;
+}
+
+/*.menu {
+	display: inline-block;
+}
+*/
+.menu ul {
+	display: flex;
+	justify-content: space-around;
+}
+
+ul li {
+	display: inline-block;
+}
+@media screen and (max-width: 740px) {
+	.menu ul {
+		display: initial;
+	}
+    ul li {
+    	display: block;
+    	padding-bottom: 20px;
+    }
+    .nav {
+    	padding-bottom: 0;
+    	margin-bottom: 0;
+    }
+}
+
+nav ul li::after {
+	content: "...";
+	color: #021631;
+}
+
+
+
+/*ul li a {
+	text-decoration: none;
+    color: #021631;
+}
+
+ul li a:visited {
+	color: #1b2d45;
+}*/
+
+/*------------*/
+/*Default view styles*/
+/*------------*/
+
+.posts {
+	margin-bottom: 10px;
+	/*border-bottom: 1px solid #021631;*/
+	padding-bottom: 8px;
+}
+
+.post-image {
+	text-align: right;
+}
+
+hr {
+	margin-top: 10px;
+    height: 1px;
+    width: 50%;
+    text-align: left;
+    margin-right: 49%;
+    color: black;
+    border: 1px solid #021631;
+}
+
+/*-------------*/
+/*Sidebar styling*/
+/*--------------*/
+
+.sidebar {
+	border-left: 1px solid #021631;
+}
+@media screen and (max-width: 740px) {
+    .sidebar {
+    	border-left: none;
+    }
+}
+
+.sidebar h2 {
+	/*text-decoration: underline;*/
+	border-bottom: 1px solid #021631;
+	font-size: 26px;
+}
+.sidebar p {
+	display: inline-block;
+	border: 1px solid #021631;
+	padding: 0px 4px;
+    line-height: 1.5;
+}
+
+.sidebar li {
+	list-style-type: none;
+	padding-bottom: 8px;
+}
+
+.sidebar ul li {
+	display: block;
+}
+
+
+
+/*------------*/
+/*Single Post*/
+/*------------*/
+
+.single-post {
+	padding: 0 15px 30px 15px;
+}
+
+/*.single-post img {
+	width: 100%;
+}*/
+
+.single-post h2 {
+	font-size: 36px;
+	margin-top: 30px;
+}
+
+.single-post img {
+	max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+/*.next-previous {
+	border-top: 2px solid #021631;
+	border-bottom: 2px solid #021631;
+	padding-top: 1rem;
+	padding-bottom: 1rem;
+	margin-bottom: 40px;
+	padding-left: 10px;
+	padding-right: 10px;
+	font-size: 24px;
+}*/
+
+.next-previous ul {
+	display: flex;
+	justify-content: space-between;
+}
+
+article {
+	margin-bottom: 40px;
+}
+
+.featured-image {
+	max-width: 100%;
+}
